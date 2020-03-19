@@ -1,0 +1,20 @@
+{{- range $key, $val := .Values.servers }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  {{ .name }}
+  labels:
+    type:  {{ .name }}
+spec:
+  type: NodePort
+  ports:
+  - name: minecraft
+    port: 25565
+    protocol: TCP
+  - name: rcon
+    port: 25575
+    protocol: TCP
+  selector:
+    app:  {{ .name }}
+{{- end }}

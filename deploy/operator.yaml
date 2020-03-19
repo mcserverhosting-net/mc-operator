@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcsh-operator
+  namespace: mcsh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mcsh-operator
+  template:
+    metadata:
+      labels:
+        name: mcsh-operator
+    spec:
+      serviceAccountName: mcsh-operator
+      containers:
+        - name: mcsh-operator
+          image: docker.io/quantomworks/mcsh-operator:v1alpha1
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              value: ""
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "mcsh-operator"
