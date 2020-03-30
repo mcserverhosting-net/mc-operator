@@ -14,16 +14,25 @@ spec:
         name: mcsh-operator
     spec:
       serviceAccountName: mcsh-operator
+      imagePullSecrets:
+      - name: regcred
       containers:
-        - name: mcsh-operator
-          image: docker.io/quantomworks/mcsh-operator:v1alpha1
-          imagePullPolicy: Always
-          env:
-            - name: WATCH_NAMESPACE
-              value: ""
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: OPERATOR_NAME
-              value: "mcsh-operator"
+      - name: mcsh-operator
+        image: docker.pkg.github.com/mcserverhosting-net/mc-operator/operator:v1beta1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        env:
+          - name: WATCH_NAMESPACE
+            value: ""
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: OPERATOR_NAME
+            value: "mcsh-operator"

@@ -71,7 +71,7 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - charts.helm.k8s.io
+  - deployments.mcserverhosting.net
   resources:
   - '*'
   verbs:

@@ -1,5 +1,17 @@
 ---
+- version: v1beta1
+  group: deployments.mcserverhosting.net
+  kind: MinecraftServer
+  chart: charts/server-deployment
 - version: v1alpha1
-  group: charts.helm.k8s.io
-  kind: ServerDeployment
-  chart: helm-charts/server-deployment
+  group: deployments.mcserverhosting.net
+  kind: SFTPServer
+  chart: charts/sftp-deployment
+- version: v1alpha1
+  group: deployments.mcserverhosting.net
+  kind: BungeeServer
+  chart: charts/bungee-deployment
+- version: v1alpha1
+  group: deployments.mcserverhosting.net
+  kind: Restriction
+  chart: charts/ns-deployment
