@@ -1,17 +1,17 @@
 ---
-- version: v1beta1
+- version: v1
   group: deployments.mcserverhosting.net
   kind: MinecraftServer
   chart: charts/server-deployment
-- version: v1alpha1
+- version: v1
   group: deployments.mcserverhosting.net
   kind: SFTPServer
   chart: charts/sftp-deployment
-- version: v1alpha1
+- version: v1
   group: deployments.mcserverhosting.net
   kind: BungeeServer
   chart: charts/bungee-deployment
-- version: v1alpha1
+- version: v1
   group: deployments.mcserverhosting.net
   kind: Restriction
-  chart: charts/ns-deployment
+  chart: charts/namespace-lock

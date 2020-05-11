@@ -5,7 +5,7 @@ metadata:
 spec:
   group: deployments.mcserverhosting.net
   versions:
-  - name: v1beta1
+  - name: v1
     served: true
     storage: true
     schema:
