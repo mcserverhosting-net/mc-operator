@@ -15,6 +15,14 @@ rules:
   resources:
   - configmaps
   - secrets
+  - resourcequotas
+  - persistentvolumeclaim
+  verbs:
+  - '*'
+- apiGroups:
+  - policy
+  resources:
+  - podsecuritypolicies
   verbs:
   - '*'
 - apiGroups:

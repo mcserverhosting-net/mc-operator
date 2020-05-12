@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mcsh-operator
-  namespace: mcsh
 spec:
   replicas: 1
   selector:
@@ -14,12 +13,10 @@ spec:
         name: mcsh-operator
     spec:
       serviceAccountName: mcsh-operator
-      imagePullSecrets:
-      - name: regcred
       containers:
       - name: mcsh-operator
-        image: docker.pkg.github.com/mcserverhosting-net/mc-operator/operator:v3
-        imagePullPolicy: IfNotPresent
+        image: docker.io/quantomworks/mc-operator:v3
+        imagePullPolicy: Always
         resources:
           requests:
             cpu: 100m

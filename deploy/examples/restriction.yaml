@@ -1,0 +1,10 @@
+apiVersion: deployments.mcserverhosting.net/v1
+kind: Restriction
+metadata:
+  name: example-restriction
+spec:
+  user: sfxworks@gmail.com
+  ports: 10
+  servers: 2
+  memory: 2Gi
+  storage: 10Gi

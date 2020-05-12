@@ -1,0 +1,50 @@
+apiVersion: deployments.mcserverhosting.net/v1
+kind: MinecraftServer
+metadata:
+  name: example-server
+spec:
+  online: true 
+  eula: true
+  version: LATEST
+  type: PAPER
+  domainName: play-example.mcserverhosting.red
+  routeName: play-example.mcserverhosting.red
+  config:
+    console: true
+    memory:
+      initial: 1G
+      max: 1G
+    server:
+      maxTickTime: 20000 
+      restrictions:
+        ops: 
+        whitelist:
+        forceGamemode: true
+      network:
+        maxPlayers: 2020
+        query: true
+        onlineMode: true
+      gameSettings:
+        hardcore: false
+        snooper: true
+        difficulty: 
+        commandBlocks: true
+        announcePlayerAchievements: true
+        nether: false
+        flight: true
+        pvp: false
+    resourcePack:
+      url: https://firebasestorage.googleapis.com/v0/b/mchostingnet-202204.appspot.com/o/KDesp%201.15%20v1.9.zip?alt=media&token=2a9e2133-a553-4433-bae7-824d964d1c7c
+    world:
+      name: normal
+      restrictions:
+        maxBuildHeight: 256
+        maxSize: 1000
+        viewDistance: 32
+        spawnProtection: 0
+      mode: adventure
+      level: largeBiomes
+  overrideOnStartup: true
+  forceRedownload: false
+  userID: 1000
+  groupID: 999

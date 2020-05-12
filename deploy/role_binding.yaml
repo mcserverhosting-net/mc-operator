@@ -5,8 +5,8 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: mcsh-operator
-  namespace: mcsh
+  namespace: default
 roleRef:
   kind: ClusterRole
-  name: mcsh-operator
+  name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
