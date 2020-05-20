@@ -5,6 +5,6 @@ metadata:
 spec:
   user: sfxworks@gmail.com
   ports: 10
-  servers: 2
-  memory: 2Gi
+  servers: 3
+  memory: 3Gi
   storage: 10Gi
