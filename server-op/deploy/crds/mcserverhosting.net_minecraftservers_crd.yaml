@@ -1,0 +1,77 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: minecraftservers.mcserverhosting.net
+spec:
+  group: mcserverhosting.net
+  names:
+    kind: MinecraftServer
+    shortNames:
+    - mcserver
+    - mcs
+    - mc
+    - mcservers
+    - mcserv
+    listKind: MinecraftServerList
+    plural: minecraftservers
+    singular: minecraftserver
+  scope: Namespaced
+  versions:
+  - name: v2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
+        type: object
+        properties:
+          online:
+            type: string
+            pattern: ^(?i)(true|false)$
+            default: "true"
+          minecraft:
+            type: object
+            properties:
+              eula:
+                type: string
+                pattern: ^(?i)(true|false)$
+                default: "false"
+              version:
+                type: string
+                default: LATEST
+              memory:
+                type: object
+                properties:
+                  initial:
+                    type: string
+                    default: 1G
+                  max:
+                    type: string
+                    default: 1G
+                  hugePages:
+                    type: string
+                    default: 125M
+          network:
+            type: object
+            properties:
+              domainName: 
+                type: string
+                pattern: ^((?!mcserverhosting|mcsh|minecraftserverhosting).)*$ #custom domain must not mach or contain our primary domains
+    served: true
+    storage: true
+    subresources:
+      status: {}
+    additionalPrinterColumns:
+    - name: version
+      type: string
+      description: The core minecraft version the server is running
+      jsonPath: .minecraft.version
+    - name: XMS
+      type: string
+      description: The minimum amount of memory your server is requesting
+      jsonPath: .minecraft.memory.initial
+    - name: XMX
+      type: string
+      description: The maximum amount of memory your server is requesting
+      jsonPath: .minecraft.memory.max
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp

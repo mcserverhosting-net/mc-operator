@@ -1,0 +1,78 @@
+apiVersion: mcserverhosting.net/v2
+kind: MinecraftServer
+metadata:
+  name: server-name
+spec:
+  config:
+    icon: 
+    modpack: 
+    mods: 
+    motd: 
+    removeOldMods: false
+    resourcePack:
+      sha: 
+      url: 
+    server:
+      gameSettings:
+        announcePlayerAchievements: true
+        commandBlocks: true
+        difficulty: null
+        flight: true
+        hardcore: false
+        nether: false
+        pvp: false
+        snooper: true
+      maxTickTime: 20000
+      network:
+        maxPlayers: 2020
+        onlineMode: true
+        query: true
+      restrictions:
+        forceGamemode: true
+        ops: 
+        whitelist: 
+    world:
+      generateStructures: false
+      generatorSettings: 
+      level: 
+      mode: 
+      name: 
+      restrictions:
+        maxBuildHeight: 256
+        maxSize: 1000
+        spawnProtection: 0
+        viewDistance: 32
+      seed: 
+      spawnAnimals: false
+      spawnNpcs: false
+      url: 
+  groupID: 999
+  java:
+    args: 
+    argsdd: fml.queryResult:confirm
+    argsxx: -XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions
+      -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50
+      -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch
+      -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages
+      -XX:LargePageSizeInBytes=2m
+  minecraft:
+    eula: true
+    memory:
+      hugePages: 256M
+      initial: 1G
+      max: 3500M
+    version: LATEST
+  network:
+    domainName: bedrock-tnt.play.mcserverhosting.red
+  online: true
+  overrideOnStartup: false
+  pages: true
+  runtime: 
+  servercore:
+    properties:
+      url: 
+      version: 
+    redownload: false
+    type: VANILLA
+  userID: 1000
+  

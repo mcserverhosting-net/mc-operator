@@ -1,0 +1,9 @@
+---
+- group: mcserverhosting.net
+  version: v2
+  kind: MinecraftServer
+  chart: helm-charts/server-deployment
+  overrideValues:
+    ip: $IP
+    tld: $TLD
+    runtime: $RUNTIME

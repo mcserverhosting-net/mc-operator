@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-op
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: server-op
+  template:
+    metadata:
+      labels:
+        name: server-op
+    spec:
+      serviceAccountName: server-op
+      containers:
+      - name: server-op
+        resources:
+          requests:
+            memory: 50Mi
+            cpu: 50m
+          limits:
+            memory: 100Mi
+            cpu: 100m
+        image: docker.io/quantomworks/server-operator
+        imagePullPolicy: Always
+        env:
+        - name: WATCH_NAMESPACE
+          value: ""
+        - name: IP
+          value: "51.222.70.233"
+        - name: TLD
+          value: mcsh.red
+        - name: RUNTIME
+          value: runsc
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: OPERATOR_NAME
+          value: "server-op"

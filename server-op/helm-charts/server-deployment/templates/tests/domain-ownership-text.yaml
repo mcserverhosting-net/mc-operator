@@ -1,0 +1,3 @@
+#TODO domain ownership identified by querying txt record. If NXDOMAIN, apply text record.
+#If true, compare namespace. If match, proceed to adjust dns records and complete pre-install/preupgrade hook.
+#If any end end abrupt
