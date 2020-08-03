@@ -63,7 +63,7 @@ spec:
       max: 3500M
     version: LATEST
   network:
-    domainName: bedrock-tnt.play.mcserverhosting.red
+    domainName: play.yourdomain.com
   online: true
   overrideOnStartup: false
   pages: true
