@@ -1,0 +1,26 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: bungeedeployments.mcserverhosting.net
+spec:
+  group: mcserverhosting.net
+  names:
+    kind: BungeeDeployment
+    shortNames:
+    - bungee
+    - bs
+    - bungees
+    listKind: BungeeDeploymentList
+    plural: bungeedeployments
+    singular: bungeedeployment
+  scope: Namespaced
+  versions:
+  - name: v2
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -1,0 +1,5 @@
+---
+- group: mcserverhosting.net
+  version: v2
+  kind: BungeeDeployment
+  chart: helm-charts/bungee-deployment

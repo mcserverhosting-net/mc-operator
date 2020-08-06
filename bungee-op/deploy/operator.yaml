@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bungee-op
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: bungee-op
+  template:
+    metadata:
+      labels:
+        name: bungee-op
+    spec:
+      serviceAccountName: bungee-op
+      containers:
+      - name: bungee-op
+        resources:
+          requests:
+            memory: 50Mi
+            cpu: 50m
+          limits:
+            memory: 100Mi
+            cpu: 100m
+        image: docker.io/quantomworks/bungee-operator
+        imagePullPolicy: Always
+        env:
+        - name: WATCH_NAMESPACE
+          value: ""
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: OPERATOR_NAME
+          value: "bungee-op"
