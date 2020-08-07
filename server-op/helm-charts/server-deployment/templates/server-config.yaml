@@ -6,8 +6,13 @@ data:
   SERVER_NAME: {{ .Release.Name }}
   USE_LARGE_PAGES: {{ default false (.Values.pages | toString) | quote }}
   {{- with .Values.minecraft }}
-  INIT_MEMORY: {{ .memory.initial | default "1Gi" }}
-  MAX_MEMORY: {{ .memory.max | default "1Gi" }}
+  {{- if eq (trunc -1 .memory.initial) "G" }}
+  INIT_MEMORY: {{ sub (mul (trimSuffix "G" .memory.initial) 1000) 200 }}M
+  MAX_MEMORY: {{ sub (mul (trimSuffix "G" .memory.max) 1000) 200 }}M
+  {{- else}}
+  INIT_MEMORY: {{max (sub (trimSuffix "M" .memory.initial) 200 ) 200}}M
+  MAX_MEMORY: {{max (sub (trimSuffix "M" .memory.max) 200 ) 200}}M
+  {{- end }}
   EULA: {{ default false (.eula | toString) | quote }}
   VERSION: {{ default "LATEST" .version | quote }}
   {{- end }}
@@ -96,7 +101,7 @@ data:
   VIEW_DISTANCE: {{ .restrictions.viewDistance | quote }}
       {{- end }}
       {{- if .seed }}
-  SEED: {{ .seed }}
+  SEED: {{ .seed | quote }}
       {{- end }}
   MODE: {{ .mode | default "Survival"}}
   LEVEL_TYPE: {{ default "DEFAULT" .level | quote }}
