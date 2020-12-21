@@ -11,7 +11,7 @@ spec:
     removeOldMods: false
     resourcePack:
       sha: 
-      url: https://firebasestorage.googleapis.com/v0/b/mchostingnet-202204.appspot.com/o/KDesp%201.15%20v1.9.zip?alt=media&token=2a9e2133-a553-4433-bae7-824d964d1c7c
+      url: 
      server:
       gameSettings:
         announcePlayerAchievements: true
