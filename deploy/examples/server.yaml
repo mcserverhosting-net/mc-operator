@@ -68,7 +68,7 @@ spec:
   network:
     domainName:  play-example.mcserverhosting.red
     #if ports are needed the following can be kept,
-    #if not required for use, feel feel free to remove
+    #if not required for plugins to use, feel feel free to remove
     ports:
     - name: 
       port: 
@@ -84,6 +84,7 @@ spec:
       version: 
     redownload: false
     type: 
+    #types offered by us are:
     #VANILLA, FORGE, SPIGOT, TUINITY, MAGMA, MOHIST, CATSERVER,
     #SPONGEVANILLA, FABRIC, and PAPER
   userID: 1001
