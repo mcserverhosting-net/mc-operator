@@ -67,6 +67,7 @@ spec:
       initial: 
       max: 
      version:
+     #version of minecraft
   network:
     domainName:  play-example.mcserverhosting.red
     #if ports are needed the following can be kept,
