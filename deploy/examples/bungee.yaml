@@ -5,9 +5,9 @@ metadata:
 spec:
   config:
      memory:
-      # config.memory.initial -- initial memory for the minecraft server. memory must end in G or M. 
+      # config.memory.initial -- initial memory for the proxy server. memory must end in G or M. 
       initial: 500M
-      # config.memory.max -- max memory for the minecraft server. memory must end in G or M. 
+      # config.memory.max -- max memory for the proxy server. memory must end in G or M. 
       max: 1G
      network:
       # config.network.domainName -- The DNS name your players will connect by
