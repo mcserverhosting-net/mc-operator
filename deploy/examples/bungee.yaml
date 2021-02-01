@@ -5,9 +5,9 @@ metadata:
 spec:
   config:
      memory:
-      # config.memory.initial -- initial memory for the minecraft server. memory must end in G or M. 
+      # config.memory.initial -- initial memory for the proxy server. memory must end in G or M. 
       initial: 500M
-      # config.memory.max -- max memory for the minecraft server. memory must end in G or M. 
+      # config.memory.max -- max memory for the proxy server. memory must end in G or M. 
       max: 1G
      network:
       # config.network.domainName -- The DNS name your players will connect by
@@ -15,7 +15,8 @@ spec:
       # config.network.routeName -- The DNS name that will route to your node's IP address.
       routeName: bungee.mcserverhosting.red
   groupID: 1000
-  jar: https://firebasestorage.googleapis.com/v0/b/mchostingnet-202204.appspot.com/o/FlameCord.jar?alt=media&token=9a8ba3db-7847-4d62-9a7f-10f65fe54601
+  jar:
+  #link for the proxy server
   online: true
   #true for on, false for off
   type: CUSTOM

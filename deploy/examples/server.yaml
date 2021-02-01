@@ -1,8 +1,10 @@
 apiVersion: mcserverhosting.net/v2
 kind: MinecraftServer
 metadata:
+#server name
   name: example-server
 spec:
+#controls some of the server.properties options
   config:
     icon: 
     modpack: 
@@ -58,17 +60,24 @@ spec:
   minecraft:
     eula: true
     memory:
-      hugePages: 
+    #The max and minimum (initial) of memory, hugePages are set to 512M for all
+    #note: ssh server takes 250M of the plan
+      hugePages: 512M
+      #hugePages are set to 512 for all
       initial: 
       max: 
-     version:  1.12.2
+     version:
+     #version of minecraft
   network:
     domainName:  play-example.mcserverhosting.red
+    #if ports are needed the following can be kept,
+    #if not required for plugins to use, feel feel free to remove
     ports:
     - name: 
       port: 
       protocol: 
   online: true
+    #true for on, false for off
   overrideOnStartup: false
   pages: true
   runtime: 
@@ -78,4 +87,7 @@ spec:
       version: 
     redownload: false
     type: 
+    #types offered by us are:
+    #VANILLA, FORGE, SPIGOT, TUINITY, MAGMA, MOHIST, CATSERVER,
+    #SPONGEVANILLA, FABRIC, and PAPER
   userID: 1001

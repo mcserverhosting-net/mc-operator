@@ -2,10 +2,15 @@ apiVersion: mcserverhosting.net/v2
 kind: SFTPServer
 metadata:
   name: 
+  #name for the sftp server
 spec:  
   online: true
+   #true for on, false for off
   users:
+
   - groupID: 1000
     userID: 1001
     publicKey: 
+    #publickey can be found by using the guide: https://mcserverhosting.net/support/post/how-to-access-minecraft-server-files/
     username: 
+    #names should be fully lowercase
