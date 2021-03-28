@@ -69,7 +69,8 @@ spec:
      version:
      #version of minecraft
   network:
-    domainName:  play-example.mcserverhosting.red
+    domainName:  
+    #leave blank if no custom domain
     #if ports are needed the following can be kept,
     #if not required for plugins to use, feel feel free to remove
     ports:
