@@ -34,7 +34,7 @@ spec:
         ops: 
         whitelist: 
     world:
-      generateStructures: false
+      generateStructures: true
       generatorSettings: 
       level: 
       mode: 
@@ -45,8 +45,8 @@ spec:
         spawnProtection: 0
         viewDistance: 32
       seed: 
-      spawnAnimals: false
-      spawnNpcs: false
+      spawnAnimals: true
+      spawnNpcs: true
       url: 
   groupID: 1000
   java:
