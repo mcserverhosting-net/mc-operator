@@ -14,7 +14,7 @@ spec:
     resourcePack:
       sha: 
       url: 
-     server:
+    server:
       gameSettings:
         announcePlayerAchievements: true
         commandBlocks: true
@@ -66,7 +66,7 @@ spec:
       #hugePages are set to 512 for all
       initial: 
       max: 
-     version:
+   version:
      #version of minecraft
   network:
     domainName:  
