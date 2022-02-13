@@ -55,15 +55,12 @@ spec:
     argsxx: -XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions
       -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50
       -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch
-      -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseLargePages
-      -XX:LargePageSizeInBytes=2m
+      -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
   minecraft:
     eula: true
     memory:
     #The max and minimum (initial) of memory, hugePages are set to 512M for all
     #note: ssh server takes 250M of the plan
-      hugePages: 512M
-      #hugePages are set to 512 for all unless your on 1.18+
       initial: 
       max: 
    version:
@@ -80,7 +77,6 @@ spec:
   online: true
     #true for on, false for off
   overrideOnStartup: false
-  pages: true
   runtime: 
   servercore:
     properties:
