@@ -4,6 +4,8 @@ metadata:
 #server name
   name: example-server
 spec:
+  fixPerms: true
+  javaOverride: "17"
 #controls some of the server.properties options
   config:
     icon: 
@@ -63,6 +65,7 @@ spec:
     #note: ssh server takes 250M of the plan
       initial: 
       max: 
+      buffer: 1000
    version:
      #version of minecraft
   network:

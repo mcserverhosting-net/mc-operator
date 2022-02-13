@@ -21,7 +21,7 @@ spec:
         difficulty: null
         flight: true
         hardcore: false
-        nether: false
+        nether: true
         pvp: false
         snooper: true
       maxTickTime: 20000
