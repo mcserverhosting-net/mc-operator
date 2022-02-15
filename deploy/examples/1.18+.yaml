@@ -1,21 +1,19 @@
 apiVersion: mcserverhosting.net/v2
 kind: MinecraftServer
 metadata:
-#server name
-  name: example-server
+  name:  play
 spec:
   fixPerms: true
   javaOverride: "17"
-#controls some of the server.properties options
   config:
-    icon: 
+    icon:
     modpack: 
-    mods: 
+    mods:
     motd: 
     removeOldMods: false
     resourcePack:
-      sha: 
-      url: 
+      sha:
+      url:
     server:
       gameSettings:
         announcePlayerAchievements: true
@@ -52,8 +50,8 @@ spec:
       url: 
   groupID: 1000
   java:
-    args: 
-    argsdd: fml.queryResult:confirm
+    args:  
+    argsdd: fml.queryResult:confirm Dlog4j2.formatMsgNoLookups=true
     argsxx: -XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions
       -XX:MaxGCPauseMillis=100 -XX:+DisableExplicitGC -XX:TargetSurvivorRatio=90 -XX:G1NewSizePercent=50
       -XX:G1MaxNewSizePercent=80 -XX:G1MixedGCLiveThresholdPercent=50 -XX:+AlwaysPreTouch
@@ -61,24 +59,13 @@ spec:
   minecraft:
     eula: true
     memory:
-    #The max and minimum (initial) of memory, hugePages are set to 512M for all
-    #note: ssh server takes 250M of the plan
+      buffer: 1000
       initial: 
       max: 
-      buffer: 1000
-   version:
-     #version of minecraft
+    version: 
   network:
-    domainName:  
-    #leave blank if no custom domain
-    #if ports are needed the following can be kept,
-    #if not required for plugins to use, feel feel free to remove
-#    ports:
-#    - name: 
-#      port: 
-#      protocol: 
+    domainName: 
   online: true
-    #true for on, false for off
   overrideOnStartup: false
   runtime: 
   servercore:
@@ -87,7 +74,4 @@ spec:
       version: 
     redownload: false
     type: 
-    #types offered by us are:
-    #VANILLA, FORGE, SPIGOT, TUINITY, MAGMA, MOHIST, CATSERVER,
-    #SPONGEVANILLA, FABRIC, and PAPER
   userID: 1001
