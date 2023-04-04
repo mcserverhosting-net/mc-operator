@@ -21,7 +21,7 @@ spec:
         difficulty: null
         flight: true
         hardcore: false
-        nether: false
+        nether: true
         pvp: false
         snooper: true
       maxTickTime: 20000
@@ -49,7 +49,7 @@ spec:
       spawnNpcs: true
       url: 
   groupID: 1000
-  java:
+  javaargs:
     args:  
     argsdd: fml.queryResult:confirm Dlog4j2.formatMsgNoLookups=true
     argsxx: -XX:+UseLargePagesInMetaspace -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions
